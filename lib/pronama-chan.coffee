@@ -55,14 +55,14 @@ module.exports =
       order: 5
     voiceVolume:
       type: "number"
-      default: 0.3
+      default: 0.0
       minimum: 0.0
       maximum: 1.0
       description: "voice volume. between 0.0 and 1.0"
       order: 6
     imageOpacity:
       type: "number"
-      default: 0.3
+      default: 0.0
       minimum: 0.0
       maximum: 1.0
       description: "image opacity. between 0.0 and 1.0"
