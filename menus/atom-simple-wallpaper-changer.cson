@@ -1,0 +1,13 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Simple Wallpaper Changer'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'atom-simple-wallpaper-changer:toggle' },
+        { 'label': 'Iterate Images', 'command': 'atom-simple-wallpaper-changer:iterateImages' }
+      ]
+    ]
+  }
+]

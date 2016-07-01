@@ -8,5 +8,5 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 'atom-text-editor':
-  'ctrl-alt-k': 'atom-pronama-chan:toggle'
-  'ctrl-alt-l': 'atom-pronama-chan:roundTheme'
+  'ctrl-alt-k': 'atom-simple-wallpaper-changer:toggle'
+  'ctrl-alt-l': 'atom-simple-wallpaper-changer:iterateImages'

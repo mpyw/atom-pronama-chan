@@ -1,20 +1,13 @@
 {
-  "name": "atom-pronama-chan",
-  "main": "./lib/pronama-chan",
-  "version": "1.0.1",
-  "description": "Add Pronama Chan to your editor",
-  "repository": "https://github.com/mpyw/atom-pronama-chan",
+  "name": "atom-simple-wallpaper-changer",
+  "main": "./lib/atom-simple-wallpaper-changer",
+  "version": "0.0.1",
+  "description": "",
+  "repository": "https://github.com/mpyw/atom-simple-wallpaper-changer",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "atom-pronama-chan-assets-anzu": "github:hurumeki/atom-pronama-chan-assets-anzu",
-    "atom-pronama-chan-assets-claudia": "github:hurumeki/atom-pronama-chan-assets-claudia",
-    "atom-pronama-chan-assets-conoha": "github:hurumeki/atom-pronama-chan-assets-conoha",
-    "atom-pronama-chan-assets-hackadoll1": "github:hurumeki/atom-pronama-chan-assets-hackadoll1",
-    "atom-pronama-chan-assets-pronama-chan": "github:hurumeki/atom-pronama-chan-assets-pronama-chan",
-    "atom-pronama-chan-assets-zunko": "github:hurumeki/atom-pronama-chan-assets-zunko",
-    "cron": "^1.1.0"
   }
 }
