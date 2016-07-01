@@ -21,13 +21,13 @@ module.exports =
       type: "object"
       properties:
         background:
-          type: "string"
+          type: ["string", "array"]
           default: ""
         wink:
-          type: "string"
+          type: ["string", "array"]
           default: ""
         blink:
-          type: "string"
+          type: ["string", "array"]
           default: ""
       order: 3
     startVoice:
@@ -122,19 +122,20 @@ module.exports =
       background-size: " + atom.config.get("atom-pronama-chan.imageSize") + ";
     }"
 
-    if fs.existsSync (imageDir + atom.config.get("atom-pronama-chan.images.background"))
+    background = @selectImage("background")
+    if fs.existsSync (imageDir + background)
       @element.textContent += " .pronama-chan .item-views /deep/ .editor--private:not(.mini) .scroll-view::after {
-        background-image: url(\"" + @getImageUrl("background") + "\");
+        background-image: url(\"" + @getImageUrl(background) + "\");
       }"
 
     ["wink", "blink", "happy", "sad", "surprise", "usual"].forEach (item, i) =>
-      if atom.config.get("atom-pronama-chan.images." + item) and
-         fs.existsSync (imageDir + atom.config.get("atom-pronama-chan.images." + item))
+      image = @selectImage(item)
+      if fs.existsSync (imageDir + image)
         @element.textContent += " .pronama-chan.pronama-#{item} .item-views /deep/ .editor--private:not(.mini) .scroll-view::after {
-          background-image: url(\"" + @getImageUrl(item) + "\");
+          background-image: url(\"" + @getImageUrl(image) + "\");
         }"
         img = document.createElement('img')
-        img.src = @getImageUrl(item)
+        img.src = @getImageUrl(image)
 
     atom.views.getView(atom.workspace).appendChild(@element)
 
@@ -226,8 +227,15 @@ module.exports =
       atom.views.getView(atom.workspace).classList.remove(className)
     , 3000
 
-  getImageUrl: (type) ->
-    @getThemeDirUrl() + "image/" + atom.config.get("atom-pronama-chan.images." + type)
+  selectImage: (type) ->
+    items = atom.config.get("atom-pronama-chan.images." + type)
+    if Array.isArray(items)
+      items[Math.floor(Math.random() * items.length)]
+    else
+      items
+
+  getImageUrl: (image) ->
+    @getThemeDirUrl() + "image/" + image
 
   getThemeDirUrl: ->
     themeDir = atom.config.get('atom-pronama-chan.themeDir')
