@@ -3,7 +3,7 @@
   "main": "./lib/pronama-chan",
   "version": "1.0.1",
   "description": "Add Pronama Chan to your editor",
-  "repository": "https://github.com/hurumeki/atom-pronama-chan",
+  "repository": "https://github.com/mpyw/atom-pronama-chan",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
