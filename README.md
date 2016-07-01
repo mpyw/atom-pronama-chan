@@ -1,6 +1,12 @@
 # mpyw/atom-simple-wallpaper-changer
 
-## オリジナルとの違い
+## インストール方法
+
+```bash
+apm install https://github.com/mpyw/atom-simple-wallpaper-changer
+```
+
+## [オリジナル](https://github.com/hurumeki/atom-pronama-chan)との違い
 
 - 背景画像の表示だけに用途を限定しました．
 - 最初は背景画像をランダム表示します．但し，設定でデフォルトを指定している場合にはそれを表示します．
@@ -25,9 +31,3 @@ atom-simple-wallpaper-changer
 |:-:|:-:|
 |<kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>K</kbd>|表示/非表示|
 |<kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>L</kbd>|画像巡回|
-
-## ライセンス LICENCE
-
-### コード Codes
-
-Released under the [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE) license
