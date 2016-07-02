@@ -9,5 +9,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
+    "chokidar": "^1.6.0"
+  },
   }
 }
