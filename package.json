@@ -1,7 +1,6 @@
 {
   "name": "atom-simple-wallpaper-changer",
   "main": "./lib/atom-simple-wallpaper-changer",
-  "version": "0.0.1",
   "description": "",
   "repository": "https://github.com/mpyw/atom-simple-wallpaper-changer",
   "license": "MIT",

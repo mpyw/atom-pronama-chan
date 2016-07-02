@@ -13,7 +13,7 @@ module.exports =
       order: 1
     assetsDir:
       type: 'string'
-      default: '~/.atom/packages/atom-simple-wallpaper-changer/assets/'
+      default: ''
       description: 'path to assets directory.'
       order: 2
     imageOpacity:
@@ -56,7 +56,7 @@ module.exports =
   loadImages: ->
     new Promise (resolve, reject) =>
       @path = @getPrefixPath()
-      if @path == null
+      if @path == null 
         resolve()
       else
         fs.readdir @path, (err, files) =>
@@ -93,6 +93,8 @@ module.exports =
   getPrefixPath: ->
     home = if process.platform is 'win32' then process.env.USERPROFILE else process.env.HOME
     path = atom.config.get('atom-simple-wallpaper-changer.assetsDir')
+    if path == ''
+      return null
     if path[0] is '~'
       path = home + path.substr(1)
     try
