@@ -48,10 +48,11 @@ module.exports =
       ignored: /[\/\\]\./
       persistent: true
     .on 'all', (event, path) =>
-      now = new Date().getTime()
-      if !@date || now - @date > 1000
-        @date = now
-        @loadImages().then => @applyStyle()
+      if event == 'add' || event == 'change' || event == 'unlink'
+        now = new Date().getTime()
+        if !@date || now - @date > 1000
+          @date = now
+          @loadImages().then => @applyStyle()
 
   loadImages: ->
     new Promise (resolve, reject) =>
