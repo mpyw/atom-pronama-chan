@@ -11,7 +11,7 @@ module.exports =
       default: ''
       description: 'default image filename. (empty value for randomization)'
       order: 1
-    assetsDir:
+    assetsDirectory:
       type: 'string'
       default: ''
       description: 'path to assets directory.'
@@ -34,7 +34,7 @@ module.exports =
     atom.commands.add 'atom-text-editor', 'atom-simple-wallpaper-changer:iterateImages', => @iterateImages()
     atom.config.onDidChange 'atom-simple-wallpaper-changer.imageOpacity', => @applyStyle()
     atom.config.onDidChange 'atom-simple-wallpaper-changer.imageSize', => @applyStyle()
-    atom.config.onDidChange 'atom-simple-wallpaper-changer.assetsDir', =>
+    atom.config.onDidChange 'atom-simple-wallpaper-changer.assetsDirectory', =>
       @loadImages().then => @applyStyle(); @watch()
     @loadImages().then => @applyStyle(); @watch()
 
@@ -92,7 +92,7 @@ module.exports =
 
   getPrefixPath: ->
     home = if process.platform is 'win32' then process.env.USERPROFILE else process.env.HOME
-    path = atom.config.get('atom-simple-wallpaper-changer.assetsDir')
+    path = atom.config.get('atom-simple-wallpaper-changer.assetsDirectory')
     if path == ''
       return null
     if path[0] is '~'
