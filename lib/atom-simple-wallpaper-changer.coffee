@@ -1,7 +1,7 @@
 fs = require 'fs'
 remote = require 'remote'
 chokidar = require 'chokidar'
-browserWindow = remote.require 'browser-window'
+browserWindow = remote.BrowserWindow
 
 module.exports =
 
